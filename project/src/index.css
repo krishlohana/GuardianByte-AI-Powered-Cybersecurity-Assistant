@@ -1,0 +1,252 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  background-color: #111827;
+}
+
+body {
+  @apply bg-gray-900 text-white min-h-screen;
+}
+
+/* Advanced Cyber-themed Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, #1f2937 0%, #111827 50%, #1f2937 100%);
+  border-radius: 6px;
+  border: 1px solid #374151;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3b82f6 0%, #1d4ed8 50%, #1e40af 100%);
+  border-radius: 6px;
+  border: 1px solid #2563eb;
+  box-shadow: 
+    0 0 8px rgba(59, 130, 246, 0.4),
+    inset 0 1px 0 rgba(147, 197, 253, 0.3),
+    inset 0 -1px 0 rgba(30, 64, 175, 0.3);
+  position: relative;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #60a5fa 0%, #2563eb 50%, #1d4ed8 100%);
+  box-shadow: 
+    0 0 12px rgba(59, 130, 246, 0.6),
+    inset 0 1px 0 rgba(147, 197, 253, 0.4),
+    inset 0 -1px 0 rgba(30, 64, 175, 0.4);
+  transform: scale(1.05);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 50%, #1e3a8a 100%);
+  box-shadow: 
+    0 0 16px rgba(59, 130, 246, 0.8),
+    inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-corner {
+  background: #1f2937;
+  border: 1px solid #374151;
+}
+
+/* Cyber Grid Pattern on Scrollbar Track */
+::-webkit-scrollbar-track::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+    linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+  background-size: 4px 4px;
+  border-radius: 6px;
+}
+
+/* Animated Cyber Pulse Effect */
+::-webkit-scrollbar-thumb::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(147, 197, 253, 0.3) 50%,
+    transparent 100%
+  );
+  border-radius: 6px;
+  animation: cyber-pulse 2s ease-in-out infinite;
+}
+
+@keyframes cyber-pulse {
+  0%, 100% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(100%);
+  }
+}
+
+/* Enhanced Scrollbar for Specific Components */
+.threat-map-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ef4444 0%, #dc2626 50%, #b91c1c 100%);
+  border: 1px solid #dc2626;
+  box-shadow: 
+    0 0 8px rgba(239, 68, 68, 0.4),
+    inset 0 1px 0 rgba(248, 113, 113, 0.3);
+}
+
+.threat-map-container::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #f87171 0%, #ef4444 50%, #dc2626 100%);
+  box-shadow: 
+    0 0 12px rgba(239, 68, 68, 0.6),
+    inset 0 1px 0 rgba(248, 113, 113, 0.4);
+}
+
+.ai-chat-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #8b5cf6 0%, #7c3aed 50%, #6d28d9 100%);
+  border: 1px solid #7c3aed;
+  box-shadow: 
+    0 0 8px rgba(139, 92, 246, 0.4),
+    inset 0 1px 0 rgba(196, 181, 253, 0.3);
+}
+
+.ai-chat-container::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #a78bfa 0%, #8b5cf6 50%, #7c3aed 100%);
+  box-shadow: 
+    0 0 12px rgba(139, 92, 246, 0.6),
+    inset 0 1px 0 rgba(196, 181, 253, 0.4);
+}
+
+.tavus-chat-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #a855f7 0%, #9333ea 50%, #7c2d12 100%);
+  border: 1px solid #9333ea;
+  box-shadow: 
+    0 0 8px rgba(168, 85, 247, 0.4),
+    inset 0 1px 0 rgba(196, 181, 253, 0.3);
+}
+
+.tavus-chat-container::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #c084fc 0%, #a855f7 50%, #9333ea 100%);
+  box-shadow: 
+    0 0 12px rgba(168, 85, 247, 0.6),
+    inset 0 1px 0 rgba(196, 181, 253, 0.4);
+}
+
+/* Firefox Scrollbar Support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #3b82f6 #1f2937;
+}
+
+/* Thin Scrollbar Variant for Mobile */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    border-radius: 4px;
+  }
+}
+
+/* Cyber Glow Effect for Active Scrolling */
+.scrolling::-webkit-scrollbar-thumb {
+  box-shadow: 
+    0 0 20px rgba(59, 130, 246, 0.8),
+    inset 0 1px 0 rgba(147, 197, 253, 0.5),
+    inset 0 -1px 0 rgba(30, 64, 175, 0.5);
+  animation: cyber-glow 0.3s ease-out;
+}
+
+@keyframes cyber-glow {
+  0% {
+    box-shadow: 
+      0 0 8px rgba(59, 130, 246, 0.4),
+      inset 0 1px 0 rgba(147, 197, 253, 0.3);
+  }
+  100% {
+    box-shadow: 
+      0 0 20px rgba(59, 130, 246, 0.8),
+      inset 0 1px 0 rgba(147, 197, 253, 0.5);
+  }
+}
+
+/* Base container padding */
+.container {
+  @apply px-4 sm:px-6 lg:px-8;
+}
+
+/* Responsive text scaling */
+h1 {
+  @apply text-3xl sm:text-4xl lg:text-5xl;
+}
+
+h2 {
+  @apply text-2xl sm:text-3xl;
+}
+
+/* Grid responsiveness */
+.grid {
+  @apply grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8;
+}
+
+/* Ensure images scale properly */
+img {
+  @apply max-w-full h-auto;
+}
+
+/* Responsive padding for sections */
+section {
+  @apply py-12 sm:py-16 lg:py-20;
+}
+
+/* Make sure buttons are touchable on mobile */
+button, 
+.button {
+  @apply min-h-[44px] px-4 py-2;
+}
+
+/* Ensure proper spacing on mobile */
+.mobile-spacing > * + * {
+  @apply mt-3 sm:mt-4;
+}
+
+/* Ensure proper form element sizing on mobile */
+input, 
+select, 
+textarea {
+  @apply text-base sm:text-sm;
+}
+
+/* Responsive padding for cards */
+.card {
+  @apply p-4 sm:p-6 lg:p-8;
+}
+
+/* Fix navigation menu for mobile - Higher z-index than voice assistant */
+.nav-menu {
+  @apply fixed top-0 right-0 h-full w-full sm:w-64 bg-gray-800 border-l border-gray-700 transform transition-transform duration-300 ease-in-out z-50;
+}
+
+/* Ensure proper modal sizing */
+.modal {
+  @apply w-[95%] sm:w-[80%] lg:w-[60%] max-w-4xl mx-auto;
+}
